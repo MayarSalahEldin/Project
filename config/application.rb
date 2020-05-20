@@ -15,7 +15,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Myapp
+module CapstoneApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -28,18 +28,19 @@ module Myapp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    Mongoid.load!("./config/mongoid.yml")
 
-    Mongoid.load!('./config/mongoid.yml')
-    config.generators { |g| g.orm :active_record }
+    config.generators {|g| g.orm :active_record}
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins 'MayarSalahEldin.io'
-        resource '/api/*',
-          :headers => :any,
-          :methods => [:get, :post, :put, :delete, :options]
+        origins '*'
+        resource '/api/*', 
+        headers: :any, 
+        methods: [:get] #, :post, :options
       end
     end
+    
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
