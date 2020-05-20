@@ -12,7 +12,6 @@ group :development, :test do
   gem 'spring', '~>2.0', '>=2.0.0'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'mongoid-rspec', '3.0.0'
-  gem 'byebug'
   gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin, :jruby]
   gem 'httparty'
 end

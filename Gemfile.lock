@@ -39,7 +39,6 @@ GEM
     arel (6.0.4)
     bson (4.2.1)
     builder (3.2.3)
-    byebug (9.0.6)
     coderay (1.1.1)
     concurrent-ruby (1.0.4)
     diff-lcs (1.3)
@@ -170,7 +169,6 @@ PLATFORMS
 
 DEPENDENCIES
   bson (~> 4.2, >= 4.2.1)
-  byebug
   httparty
   jbuilder (~> 2.0, >= 2.6.0)
   mongoid (~> 5.0.0)
@@ -186,4 +184,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.1.4
+   1.14.2
