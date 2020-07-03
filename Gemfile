@@ -6,7 +6,7 @@ gem 'rails', '4.2.8'
 gem 'rails-api'
 gem 'pry-rails', '~>0.3', '>=0.3.4'
 gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
-
+gem 'pry'
 gem 'jbuilder', '~>2.0', '>=2.6.0'
 
 gem 'puma', '~>3.6', '>=3.6.0'#, :platforms=>:ruby
