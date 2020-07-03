@@ -13,8 +13,10 @@ development:
   url: <%= ENV['DATABASE_URL'] %>
 
 test:
-  <<: *default
-  database: capstone_app_test
+ adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
 
 production:
   adapter: postgresql
