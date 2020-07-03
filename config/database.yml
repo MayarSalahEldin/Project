@@ -7,16 +7,12 @@ default: &default
   host: <%= ENV['POSTGRES_HOST'] %>
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: capstone_app_development
 
 test:
- adapter: postgresql
-  encoding: unicode
-  pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: capstone_app_test
 
 production:
   adapter: postgresql
