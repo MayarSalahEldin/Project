@@ -14,6 +14,7 @@ gem 'pg', '~>0.20.0'
 gem 'mongo', '~>2.9', '<2.10'
 gem 'mongoid', '~>5.1', '>=5.1.5'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 group :development do 
 	gem 'spring'        
 end
