@@ -23,6 +23,7 @@ group :development, :test do
 	gem 'httparty', '~>0.14', '>=0.14.0'
 	gem 'byebug', '~>9.0', '>=9.0.6'
 	gem 'pry-byebug', '~>3.4', '3.4.0'
+	gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 end
 
 group :production do
