@@ -6,7 +6,7 @@ gem 'rails', '4.2.8'
 gem 'rails-api'
 gem 'pry-rails', '~>0.3', '>=0.3.4'
 gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
-gem 'pry'
+
 gem 'jbuilder', '~>2.0', '>=2.6.0'
 
 gem 'puma', '~>3.6', '>=3.6.0'#, :platforms=>:ruby
@@ -14,7 +14,6 @@ gem 'pg', '~>0.20.0'
 gem 'mongo', '~>2.9', '<2.10'
 gem 'mongoid', '~>5.1', '>=5.1.5'
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 group :development do 
 	gem 'spring'        
 end
