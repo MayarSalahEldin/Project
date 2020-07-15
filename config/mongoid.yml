@@ -19,5 +19,5 @@ test:
 production:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
+      uri: <%= ENV['MLAB_URI'] %>
       options:
