@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
+  include Mongoid::Document
+  include Mongoid::Timestamps
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           #:confirmable, :omniauthable
