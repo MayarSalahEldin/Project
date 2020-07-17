@@ -40,7 +40,7 @@ module Myapp
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
-        resource '*', 
+        resource '/api/*', 
           :headers => :any, 
           :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
           :methods => [:get, :post, :put, :delete, :options]
