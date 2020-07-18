@@ -27,8 +27,8 @@
                                   "spa-demo.authn.checkMe"];
   function AuthnCheckController($auth, whoAmI, checkMe) {
     var vm = this;
-    //vm.client = {}
-    //vm.server = {}
+    vm.client = {}
+    vm.server = {}
     vm.getClientUser = getClientUser;
     vm.whoAmI = getServerUser;
     vm.checkMe = checkServerUser;
