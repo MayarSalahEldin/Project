@@ -17,7 +17,7 @@
   SignupController.$inject = ["$scope","$state","spa-demo.authn.Authn"];
   function SignupController($scope, $state, Authn) {
     var vm=this;
-    vm.signupForm = {}
+    //vm.signupForm = {}
     vm.signup = signup;
 
     vm.$onInit = function() {
