@@ -1,4 +1,7 @@
-class Role < ActiveRecord::Base
+class Role < ApplicationRecord
+include Mongoid::Document
+  include Mongoid::Timestamps
+  
   ADMIN="admin"
   ORIGINATOR="originator"
   ORGANIZER="organizer"

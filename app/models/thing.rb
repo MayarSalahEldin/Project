@@ -1,4 +1,6 @@
 class Thing < ActiveRecord::Base
+	include Mongoid::Document
+  include Mongoid::Timestamps
   include Protectable
   validates :name, :presence=>true
 
