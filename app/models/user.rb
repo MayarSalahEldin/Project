@@ -2,8 +2,10 @@ class User < ApplicationRecord
   # Include default devise modules.
   include Mongoid::Document
   include Mongoid::Timestamps
-
-
+  field :email, type: String
+  field :encrypted_password, type: String
+  field :name, type: String
+  field :nickname, type: String
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           #:confirmable, :omniauthable
