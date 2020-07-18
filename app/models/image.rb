@@ -1,4 +1,4 @@
-class Image < ApplicationRecord
+class Image < ActiveRecord::Base
   include Mongoid::Document
   include Mongoid::Timestamps
   field :caption, type: String

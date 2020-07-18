@@ -1,4 +1,4 @@
-class Inquiry < ApplicationRecord
+class Inquiry < ActiveRecord::Base
   include Mongoid::Document
   include Mongoid::Timestamps
    field :subject, type: String

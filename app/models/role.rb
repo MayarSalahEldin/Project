@@ -1,4 +1,4 @@
-class Role < ApplicationRecord
+class Role < ActiveRecord::Base
 include Mongoid::Document
   include Mongoid::Timestamps
   
