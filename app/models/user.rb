@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   # Include default devise modules.
   include Mongoid::Document
   include Mongoid::Timestamps
