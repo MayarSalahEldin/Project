@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   field :encrypted_password, type: String
   field :name, type: String
   field :email, type: String
-  field :tokens, type: JSON 
+  field :tokens, type: BSON::Binary
+ 
   
 
   devise :database_authenticatable, :registerable,
