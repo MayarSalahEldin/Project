@@ -8,6 +8,6 @@ class AuthnController < ApplicationController
   end
 
   def checkme
-    render json: current_user || {nil}
+    render json: current_user
   end
 end
