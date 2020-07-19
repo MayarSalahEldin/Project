@@ -8,6 +8,7 @@ class AuthnController < ApplicationController
   end
 
   def checkme
+  	@user=current_user
     render json: current_user || {}
   end
 end
