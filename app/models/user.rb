@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   include Mongoid::Document
   include Mongoid::Timestamps
    field :provider, type: String
+   field :uid, type: String
   field :encrypted_password, type: String
   field :name, type: String
   field :email, type: String
