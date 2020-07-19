@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules.
   include Mongoid::Document
   include Mongoid::Timestamps
+   field :provider, type: String
   field :encrypted_password, type: String
   field :name, type: String
   field :email, type: String
