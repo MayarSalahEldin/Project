@@ -10,7 +10,7 @@ gem 'pundit', '~>1.1', '>=1.1.0'
 gem 'exifr', '~> 1.2', '>= 1.2.5'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'geokit-rails', '~>2.2', '>= 2.2.0'
-
+gem 'pry'
 gem 'sass-rails', '~> 5.0', '>=3.4.22'
 gem 'uglifier', '~> 3.0', '>=3.0.2'
 gem 'coffee-rails', '~> 4.1', '>= 4.1.0'
@@ -25,8 +25,8 @@ group :development, :test do
   gem 'webrick', '~>1.3', '>=1.3.1', :platforms=>[:mingw, :mswin, :x64_mingw, :jruby]
   gem 'tzinfo-data', :platforms=>[:mingw, :mswin, :x64_mingw, :jruby]
   gem 'sqlite3', '1.3.13'
-  gem 'byebug', '~>9.0', '>=9.0.6'
-  gem 'pry-byebug', '~>3.4', '>=3.4.0'
+  gem 'byebug'
+  gem 'pry-byebug' 
   gem 'httparty', '~>0.14', '>=0.14.0'
 
   gem 'rspec-rails', '~> 3.5', '>=3.5.2'
