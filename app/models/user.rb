@@ -1,16 +1,5 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
-  include Mongoid::Document
-  include Mongoid::Timestamps
-   field :provider, type: String
-   field :uid, type: String
-  field :encrypted_password, type: String
-  field :name, type: String
-  field :email, type: String
-  field :tokens, type: BSON::Binary
- 
-  
-
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           #:confirmable, :omniauthable

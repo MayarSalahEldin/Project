@@ -1,7 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require "rails"
-require "mongoid"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -30,7 +29,7 @@ module Myapp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    Mongoid.load!(Rails.root.join("config/mongoid.yml"))
+    Mongoid.load!('./config/mongoid.yml')
     #which default ORM are we using with scaffold
     #add  --orm mongoid, or active_record 
     #    to rails generate cmd line to be specific
@@ -39,7 +38,8 @@ module Myapp
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins '*'
+        origins /https:\/\/\w+\.github\.io/
+
         resource '*', 
           :headers => :any, 
           :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],

@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      database: FinalPro
+      database: myapp_development
       hosts:
         - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
       options:
@@ -9,7 +9,7 @@ development:
 test:
   clients:
     default:
-      database: FinalPro
+      database: myapp_test
       hosts:
         - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
       options:
@@ -21,3 +21,4 @@ production:
     default:
       uri: <%= ENV['MLAB_URI'] %>
       options:
+        connect_timeout: 15
