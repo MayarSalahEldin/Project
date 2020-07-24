@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304202140) do
+ActiveRecord::Schema.define(version: 20200130184707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "foos", force: :cascade do |t|
     t.string   "name",       null: false
@@ -27,12 +33,19 @@ ActiveRecord::Schema.define(version: 20170304202140) do
     t.integer  "creator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float    "lng"
-    t.float    "lat"
   end
 
   add_index "images", ["creator_id"], name: "index_images_on_creator_id", using: :btree
-  add_index "images", ["lng", "lat"], name: "index_images_on_lng_and_lat", using: :btree
+
+  create_table "inquiries", force: :cascade do |t|
+    t.string   "subject",     null: false
+    t.text     "description"
+    t.integer  "creator_id",  null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "inquiries", ["creator_id"], name: "index_inquiries_on_creator_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.integer  "user_id",    null: false

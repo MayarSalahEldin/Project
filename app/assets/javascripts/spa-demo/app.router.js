@@ -10,10 +10,13 @@
                             "spa-demo.config.APP_CONFIG"];
 
   function RouterFunction($stateProvider, $urlRouterProvider, APP_CONFIG) {
+    
     $stateProvider
     .state("home",{
-      url: "/subjects",
-      templateUrl: APP_CONFIG.subjects_page_html
+      url: "/",
+      templateUrl: APP_CONFIG.main_page_html,
+      // controller: ,
+      // controllerAs: ,
     })
     .state("accountSignup",{
       url: "/signup",
@@ -31,12 +34,11 @@
       url: "/things/:id",
       templateUrl: APP_CONFIG.things_page_html
     })
-    .state("foos",{
-      url: "/foos",
-      templateUrl: APP_CONFIG.main_page_html
-    })
-    ; 
+    .state("inquiries", {
+      url: "inquiries/:id",
+      templateUrl: APP_CONFIG.inquiries_page_html
+    }); 
 
-    //$urlRouterProvider.otherwise("/subjects");
+    //$urlRouterProvider.otherwise("/"); eliminate default route
   }
 })();

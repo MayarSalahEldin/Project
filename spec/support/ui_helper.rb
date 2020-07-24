@@ -1,6 +1,6 @@
 module UiHelper
-  def create_user props={}
-    user_props=FactoryGirl.attributes_for(:user, props);
+  def create_user
+    user_props=FactoryGirl.attributes_for(:user);
     user = FactoryGirl.create(:user, user_props)
     user_props.merge(:id=>user.id, :uid=>user.uid)
   end
@@ -78,8 +78,8 @@ module UiHelper
     return user
   end
 
-  def wait_until timeout=Capybara.default_max_wait_time
-    Timeout.timeout(timeout) do 
+  def wait_until
+    Timeout.timeout(Capybara.default_max_wait_time) do 
       sleep(0.1) until value = yield
       value
     end
