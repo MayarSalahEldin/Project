@@ -1,6 +1,4 @@
 class ThingImage < ActiveRecord::Base
-	include Mongoid::Document
-  include Mongoid::Timestamps
   belongs_to :image
   belongs_to :thing
 
