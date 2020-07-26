@@ -7,8 +7,6 @@ class Role < ActiveRecord::Base
   field :mid, type:Integer
   field :created_at, type: String
   field :updated_at, type: String
-  embedded_in :user
-  
   ADMIN="admin"
   ORIGINATOR="originator"
   ORGANIZER="organizer"
