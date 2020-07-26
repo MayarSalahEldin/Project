@@ -1,0 +1,14 @@
+current directory: C:/Users/mayar/Project/vendor/cache/ruby/2.4.0/gems/interception-0.5/ext
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20200726-24240-7v28yy.rb extconf.rb
+
+current directory: C:/Users/mayar/Project/vendor/cache/ruby/2.4.0/gems/interception-0.5/ext
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: C:/Users/mayar/Project/vendor/cache/ruby/2.4.0/gems/interception-0.5/ext
+make "DESTDIR="
+:
+
+current directory: C:/Users/mayar/Project/vendor/cache/ruby/2.4.0/gems/interception-0.5/ext
+make "DESTDIR=" install
+:

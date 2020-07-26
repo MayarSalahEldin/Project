@@ -1,16 +1,18 @@
+# 
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.8'
 gem 'rails-api', '~>0.4.0'
 gem 'pry-rails', '~>0.3.4'
-gem 'devise'
 gem 'rack-cors', '~>1.0.5', :require => 'rack/cors'
 gem 'devise_token_auth', '0.1.39'
 gem 'pundit', '~>1.1.0'
 gem 'exifr', '~> 1.2.5'
+gem 'pry', '0.13.0'
+gem 'pg', '~> 0.21'
 gem 'mini_magick', '~> 4.9.4'
 gem 'geokit-rails', '~>2.2.0'
-gem 'bson', '4.7.1'
+gem 'bson', '4.10.0'
 gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier', '~> 3.0.2'
 gem 'coffee-rails', '~> 4.1.0'
@@ -25,8 +27,8 @@ group :development, :test do
   gem 'webrick', '~>1.3.1', :platforms=>[:mingw, :mswin, :x64_mingw, :jruby]
   gem 'tzinfo-data', :platforms=>[:mingw, :mswin, :x64_mingw, :jruby]
   gem 'sqlite3', '~>1.3.12'
-  gem 'byebug', '~>9.0.6'
-  gem 'pry-byebug', '~>3.4.0'
+  gem 'byebug', '11.0'
+  gem 'pry-byebug', '3.9.0'
   gem 'httparty', '~>0.14.0'
 
   gem 'rspec-rails', '~> 3.5.2'
@@ -43,7 +45,7 @@ group :production do
   gem 'rails_12factor', '~>0.0.3'
 end
 
-gem 'pg', '~>0.19.0'
+
 gem 'puma', '~>3.12.2', :platforms=>:ruby
 gem 'mongoid', '~>5.1.5'
 gem 'mongo', '~>2.4.0'

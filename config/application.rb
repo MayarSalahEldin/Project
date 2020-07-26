@@ -1,7 +1,9 @@
+
 require File.expand_path('../boot', __FILE__)
 
 require "rails"
 require "mongoid"
+require "pry"
 # Pick the frameworks you want:
 require 'devise'
 require "active_model/railtie"
