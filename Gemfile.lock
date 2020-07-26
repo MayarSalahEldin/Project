@@ -301,6 +301,7 @@ DEPENDENCIES
   chromedriver-helper (~> 1.0.0)
   coffee-rails (~> 4.1.0)
   database_cleaner (~> 1.5.3)
+  devise
   devise_token_auth (= 0.1.39)
   exifr (~> 1.2.5)
   factory_girl_rails (~> 4.7.0)
