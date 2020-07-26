@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   field :tokens, type: String
   field :created_at, type: String
   field :updated_at, type: String
-  
+  embeds_one :roles
 
 
   devise :database_authenticatable, :registerable,

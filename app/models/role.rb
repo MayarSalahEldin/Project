@@ -1,4 +1,13 @@
 class Role < ActiveRecord::Base
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  field :user_id, type:Integer
+  field :role_name, type: String
+  field :mname, type: String
+  field :mid, type:Integer
+  field :created_at, type: String
+  field :updated_at, type: String
+  embedded_in :user
   
   ADMIN="admin"
   ORIGINATOR="originator"
