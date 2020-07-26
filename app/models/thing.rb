@@ -1,4 +1,9 @@
 class Thing < ActiveRecord::Base
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  field :name, type: String
+  field :description, type: String
+  field :notes, type: String
   include Protectable
   validates :name, :presence=>true
 
