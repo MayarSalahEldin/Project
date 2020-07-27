@@ -1,4 +1,16 @@
 class User < ActiveRecord::Base
+
+
+  # Include default devise modules.
+ 
+
+  devise :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :trackable, :validatable
+          #:confirmable, :omniauthable
+
+ include DeviseTokenAuth::Concerns::User  
+
+  has_many :roles, inverse_of: :user, dependent: :destroy
  include Mongoid::Document
   include Mongoid::Timestamps
   field :provider, type: String
@@ -21,20 +33,9 @@ class User < ActiveRecord::Base
   field :nickname, type: String
   field :image, type: String
   field :email, type: String
-#  field :tokens, type: String
+  field :tokens, type: BSON
   field :created_at, type: String
   field :updated_at, type: String
-
-  # Include default devise modules.
- 
-
-  devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable
-          #:confirmable, :omniauthable
-
- include DeviseTokenAuth::Concerns::User  
-
-  has_many :roles, inverse_of: :user, dependent: :destroy
   def has_role(role_list, mname=nil, mid=nil) 
     role_names=roles.relevant(mname, mid).map {|r| r.role_name}
     (role_names & role_list).any?
