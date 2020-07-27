@@ -5,16 +5,7 @@ class ApplicationController < ActionController::API
   include Pundit
 
   before_action :configure_permitted_parameters, if: :devise_controller?
- private
- def configure_devise_permitted_parameters
-  registration_params = [:email , :name,:password, :password_confirmation]
 
-  if params[:action] == 'create'
-    devise_parameter_sanitizer.for(:sign_up) do
-      |u| u.permit(registration_params)
-    end
-  end
-end
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from Mongoid::Errors::DocumentNotFound, with: :record_not_found
   rescue_from ActionController::ParameterMissing, with: :missing_parameter
