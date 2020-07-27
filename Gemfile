@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 ruby "2.4.5"
 gem 'rails', '4.2.8'
+gem 'json'
 gem 'rails-api', '~>0.4.0'
 gem 'pry-rails', '~>0.3.4'
 gem 'rack-cors', '~>1.0.5', :require => 'rack/cors'
