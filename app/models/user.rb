@@ -8,29 +8,7 @@ class User < ActiveRecord::Base
 
  include DeviseTokenAuth::Concerns::User  
 
-  field :provider, type: String
-  field :uid, type: String
-  field :encrypted_password, type: String
-  field :reset_password_token, type: String
-  field :reset_password_sent_at, type: String
-  field :remember_created_at, type: String
-  field :sign_in_count, type: String
-  field :current_sign_in_at, type: String
-  field :last_sign_in_at, type: String
-  field :current_sign_in_ip, type: String
-  field :last_sign_in_ip, type: String
-  field :confirmation_token, type: String
-  field :confirmed_at, type: String
-  field :encrypted_password, type: String
-  field :confirmation_sent_at, type: String
-  field :unconfirmed_email, type: String
-  field :name, type: String
-  field :nickname, type: String
-  field :image, type: String
-  field :email, type: String
-  field :tokens, type: BSON
-  field :created_at, type: DateTime
-  field :updated_at, type: DateTime
+  
 
 
   has_many :roles, inverse_of: :user, dependent: :destroy
@@ -65,5 +43,27 @@ class User < ActiveRecord::Base
      roles.where(:role_name=>Role::ADMIN).exists?
   end
 
-
+field :provider, type: String
+  field :uid, type: String
+  field :encrypted_password, type: String
+  field :reset_password_token, type: String
+  field :reset_password_sent_at, type: String
+  field :remember_created_at, type: String
+  field :sign_in_count, type: String
+  field :current_sign_in_at, type: String
+  field :last_sign_in_at, type: String
+  field :current_sign_in_ip, type: String
+  field :last_sign_in_ip, type: String
+  field :confirmation_token, type: String
+  field :confirmed_at, type: String
+  field :encrypted_password, type: String
+  field :confirmation_sent_at, type: String
+  field :unconfirmed_email, type: String
+  field :name, type: String
+  field :nickname, type: String
+  field :image, type: String
+  field :email, type: String
+  field :tokens, type: BSON
+  field :created_at, type: DateTime
+  field :updated_at, type: DateTime
 end
