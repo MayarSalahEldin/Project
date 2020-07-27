@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
+ 
+ include DeviseTokenAuth::Concerns::User
   # Include default devise modules.
+ 
+
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           #:confirmable, :omniauthable
-  include DeviseTokenAuth::Concerns::User
+ 
 
    include Mongoid::Document
   include Mongoid::Timestamps
@@ -27,13 +31,10 @@ class User < ActiveRecord::Base
   field :nickname, type: String
   field :image, type: String
   field :email, type: String
-#  field :tokens, type: String
+  field :tokens, type: BSON
   field :created_at, type: String
   field :updated_at, type: String
   
-
-
- 
 
   has_many :roles, inverse_of: :user, dependent: :destroy
 
