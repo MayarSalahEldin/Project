@@ -9,9 +9,7 @@ class User < ActiveRecord::Base
           #:confirmable, :omniauthable
 
  include DeviseTokenAuth::Concerns::User  
-
-  has_many :roles, inverse_of: :user, dependent: :destroy
- include Mongoid::Document
+include Mongoid::Document
   include Mongoid::Timestamps
   field :provider, type: String
   field :uid, type: String
@@ -36,6 +34,8 @@ class User < ActiveRecord::Base
   field :tokens, type: BSON
   field :created_at, type: String
   field :updated_at, type: String
+  has_many :roles, inverse_of: :user, dependent: :destroy
+ 
   def has_role(role_list, mname=nil, mid=nil) 
     role_names=roles.relevant(mname, mid).map {|r| r.role_name}
     (role_names & role_list).any?
