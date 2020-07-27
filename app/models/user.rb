@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
-
-
-  # Include default devise modules.
- 
+ include Mongoid::Document
+ include Mongoid::Timestamps
 
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
@@ -10,9 +8,6 @@ class User < ActiveRecord::Base
 
  include DeviseTokenAuth::Concerns::User  
 
-
-   include Mongoid::Document
- include Mongoid::Timestamps
   field :provider, type: String
   field :uid, type: String
   field :encrypted_password, type: String
@@ -34,14 +29,8 @@ class User < ActiveRecord::Base
   field :image, type: String
   field :email, type: String
   field :tokens, type: BSON
-  field :created_at, type: String
-  field :updated_at, type: String
-
-
-
-
-
-
+  field :created_at, type: DateTime
+  field :updated_at, type: DateTime
 
 
   has_many :roles, inverse_of: :user, dependent: :destroy
