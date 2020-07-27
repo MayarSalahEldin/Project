@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
   # Include default devise modules.
+  devise :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :trackable, :validatable
+          #:confirmable, :omniauthable
+  include DeviseTokenAuth::Concerns::User
+
    include Mongoid::Document
   include Mongoid::Timestamps
   field :provider, type: String
@@ -28,10 +33,7 @@ class User < ActiveRecord::Base
   
 
 
-  devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable
-          #:confirmable, :omniauthable
-  include DeviseTokenAuth::Concerns::User
+ 
 
   has_many :roles, inverse_of: :user, dependent: :destroy
 
