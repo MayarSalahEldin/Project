@@ -5,6 +5,7 @@ class ApplicationController < ActionController::API
   include Pundit
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+ private
  def configure_devise_permitted_parameters
   registration_params = [:email , :name,:password, :password_confirmation]
 
