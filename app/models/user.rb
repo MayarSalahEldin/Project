@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   field :nickname, type: String
   field :image, type: String
   field :email, type: String
-  field :tokens, type: Bson
+  field :tokens, type: bson
   field :created_at, type: String
   field :updated_at, type: String
 
