@@ -12,6 +12,13 @@ class ApplicationController < ActionController::API
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :email
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :password
+    devise_parameter_sanitizer.for(:sign_up) << :password_confirmation
+  end
+
     def full_message_error full_message, status
       payload = {
         errors: { full_messages:["#{full_message}"] }
