@@ -1,5 +1,5 @@
 PROMPT
-Identify which assignment option you implemented and describe what the peer grader will be able to do with the enhancement relative to the rubric requirements. Feel free to boast but focus on what the peer grader needs to know first.
+Identify which assignment option you implemented and describe what the peer grader wi ll be able to do with the enhancement relative to the rubric requirements. Feel free to boast but focus on what the peer grader needs to know first.
 
 I implemented the Customer and Inquiries option. 
 To submit a inquiry, a user must be authenticated. An unauthenticated user can not submit any inquiry.

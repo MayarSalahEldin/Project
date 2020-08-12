@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
+ 
  include Mongoid::Document
  include Mongoid::Timestamps
-field :provider, type: String
+  field :provider, type: String
   field :uid, type: String
   field :encrypted_password, type: String
   field :reset_password_token, type: String
@@ -24,6 +25,8 @@ field :provider, type: String
   field :tokens
   field :created_at, type: DateTime
   field :updated_at, type: DateTime
+  
+
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
           #:confirmable, :omniauthable
